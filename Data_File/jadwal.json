@@ -1,0 +1,62 @@
+{
+    "Senin": {
+        "TI0141": {
+            "nama": "PrakStrukDat",
+            "mulai": "09:30",
+            "selesai": "11:20"
+        },
+        "TI0133": {
+            "nama": "StrukDat",
+            "mulai": "07:30",
+            "selesai": "09:20"
+        }
+    },
+    "Jumat": {
+        "TI0123": {
+            "nama": "BII",
+            "mulai": "13:30",
+            "selesai": "15:20"
+        }
+    },
+    "Rabu": {
+        "TI0153": {
+            "nama": "RS",
+            "mulai": "11:30",
+            "selesai": "13:20"
+        },
+        "TI0161": {
+            "nama": "PrakRS",
+            "mulai": "13:30",
+            "selesai": "15:20"
+        }
+    },
+    "Selasa": {
+        "TI0173": {
+            "nama": "SBD",
+            "mulai": "11:30",
+            "selesai": "13:20"
+        },
+        "TI0181": {
+            "nama": "PrakSBD",
+            "mulai": "13:30",
+            "selesai": "15:20"
+        },
+        "TI0283": {
+            "nama": "DEA",
+            "mulai": "09:30",
+            "selesai": "11:20"
+        }
+    },
+    "Kamis": {
+        "TI0193": {
+            "nama": "RO",
+            "mulai": "11:30",
+            "selesai": "13:20"
+        },
+        "TI0213": {
+            "nama": "SO",
+            "mulai": "13:30",
+            "selesai": "15:20"
+        }
+    }
+}
