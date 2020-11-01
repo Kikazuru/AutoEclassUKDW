@@ -29,7 +29,7 @@ class PresensiEclass:
         driver = self.driver
         # edit bagian hadir
         try:
-            hadir = driver.find_element_by_xpath("//a[@class='menu sub ic_nilai']")
+            hadir = driver.find_element_by_xpath("//a[@class='menu sub ic_nilai']") 
         except:
             return False
         hadir.click()
