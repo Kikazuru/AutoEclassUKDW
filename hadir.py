@@ -4,28 +4,34 @@ import getpass
 
 jadwal = jadwal.Jadwal()
 jadwalHariIni = jadwal.hari_ini()
-        
+
+data = jadwal.loadProfile()
+    
+if data:
+    username, password = data
+else:
+    username = input("Username : ")
+    password = getpass.getpass(prompt='Password : ')
+    
+    if input("Remember (y/n)? : ") in "yY":
+        jadwal.saveProfile(username,password)
+
+
+if jadwal.isEmpty():
+    user = presensi.Eclass(username, password)
+
+    user.login()
+    jadwal.build_jadwal(user.scrapJadwalEclass())
+
 if jadwalHariIni:
-    matkulHariIni = jadwal.matkul()
+    matkulHariIni = jadwal.matkulHariIni()
     
     if matkulHariIni:
-        data = jadwal.loadProfile()
-        
-        if data:
-            username, password = data
-        else:
-            username = input("Username : ")
-            
-            password = getpass.getpass(prompt='Password : ')
-            
-            if input("Remember (y/n)? : ") in "yY":
-                jadwal.saveProfile(username,password)
-            
-        harris = presensi.PresensiEclass(username, password)
-        harris.login(matkulHariIni)
-        if not harris.presensi():
+        user = presensi.Eclass(username, password)
+        user.login()
+        if not user.presensi(matkulHariIni):
             print("presensi belum dibuka!")
-        harris.closeBrowser()
+        user.closeBrowser()
     else:
         print("Saat ini belum ada kuliah")
 else:

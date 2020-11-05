@@ -18,7 +18,7 @@ while True:
         jadwalHariIni = jadwal.hari_ini()
         
         if jadwalHariIni:
-            matkulHariIni = jadwal.matkul()
+            matkulHariIni = jadwal.matkulHariIni()
             
             if matkulHariIni:
                 data = jadwal.loadProfile()

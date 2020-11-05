@@ -8,14 +8,17 @@ class Jadwal:
     abs_path = os.path.join(script_dir, "../Data_File/")
     
     def __init__(self):
-        self.days =["Senin", "Selasa", "Rabu", "Kamis", 
-                "Jumat", "Sabtu", "Minggu"] 
+        self.days =["SENIN", "SELASA", "RABU", "KAMIS", 
+                "JUMAT", "SABTU", "MINGGU"] 
         
         with open(self.abs_path + "jadwal.json", "r") as file_jadwal:
             try:
                 self.jadwal = load(file_jadwal)
             except:
                 self.jadwal = {}
+    
+    def isEmpty(self):
+        return self.jadwal == {}
     
     def loadProfile(self):
         try:
@@ -41,7 +44,7 @@ class Jadwal:
         else:
             return False
         
-    def matkul(self):
+    def matkulHariIni(self):
         jadwalHariIni = self.hari_ini()
         if jadwalHariIni:
             for kode, value in jadwalHariIni.items():
@@ -104,3 +107,8 @@ class Jadwal:
             
             dump(self.jadwal, file_jadwal)
             return hari
+    
+    def build_jadwal(self, dict_jadwal):
+        self.jadwal = dict_jadwal
+        with open(self.abs_path + "jadwal.json", "w") as file_jadwal:
+            dump(self.jadwal, file_jadwal)
